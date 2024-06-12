@@ -21,9 +21,9 @@
 
 # Resources
 
--[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) 
--[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) 
--[Java Script](https://www.w3schools.com/js/default.asp) 
--[React](https://www.w3schools.com/react/)
--[Git](https://www.w3schools.com/git/) 
+-[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)   
+-[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)    
+-[Java Script](https://www.w3schools.com/js/default.asp)   
+-[React](https://www.w3schools.com/react/)  
+-[Git](https://www.w3schools.com/git/)   
 
