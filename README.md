@@ -18,3 +18,12 @@
    - The quiz should end after 10 to 15 questions, displaying the score and providing an option to reattempt the quiz.
    
 2. Upload your React application in the `task_2` folder without the `node_modules`.
+
+# Resources
+
+-[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) 
+-[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) 
+-[Java Script](https://www.w3schools.com/js/default.asp) 
+-[React](https://www.w3schools.com/react/)
+-[Git](https://www.w3schools.com/git/) 
+
