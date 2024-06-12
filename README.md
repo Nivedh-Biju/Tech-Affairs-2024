@@ -11,11 +11,11 @@
 
 ## Task 2: Quiz Application
 
-1. Use an API of your choice and create a simple quiz application with the following requirements:
+1. Use an JSON data file with quiz questions of your choice and create a simple quiz application with the following requirements:
    - The application should be responsive.
    - The user should be able to attend the quiz with only one question displayed at a time, along with the current score.
    - Make the UI as close as possible to this design: [Audible Utility Quiz](https://dribbble.com/shots/17815087-Audible-Utility-Quiz).
-   - The quiz should end after 10 to 15 questions, displaying the score and providing an option to reattempt the quiz.
+   - The quiz should end after 10 to 15 questions, rhe questions should be of random order displaying the score and providing an option to reattempt the quiz.
    
 2. Upload your React application in the `task_2` folder without the `node_modules`.
 
