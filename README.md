@@ -1,7 +1,7 @@
 # Tasks
 
 ## Task 1: Horizontal Sliding Component
-
+***Fork this repo and make a pull request . DO NOT work on others pages and make your own folder for each task to prevent merge conflicts***
 1. Clone an existing repository of React and create a horizontal sliding component with the following specifications:
    - The slider should display three cards at a time on a laptop and only one card at a time on mobile phones.
    - Use CSS Grid.
