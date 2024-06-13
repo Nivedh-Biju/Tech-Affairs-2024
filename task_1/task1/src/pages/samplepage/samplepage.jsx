@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Card from '../../components/Card';
 
 function SamplePage({ data }) {
     const no_of_images = 3;
@@ -59,7 +60,7 @@ function SamplePage({ data }) {
                 </button>
                 <div className='grid grid-flow-col auto-cols-max gap-4'>
                     {displayed_images.map((image, index) => (
-                        <img key={index} src = {image.src} alt={image.alt} className="w-full h-auto" />
+                        <Card key = {index} src = {image.src} alt = {image.alt}/>
                     ))}
                 </div>
                 <button onClick={handleNext} disabled={startIndex >= data.length - no_of_images} className={`border border-white rounded-full p-2 ${startIndex >= data.length - no_of_images ? 'opacity-50 cursor-not-allowed' : 'hover:bg-slate-600/80'}`}>
