@@ -10,6 +10,11 @@ const SliderPage = () => {
     { id: 3, content: "Card 3" },
     { id: 4, content: "Card 4" },
     { id: 5, content: "Card 5" },
+    { id: 6, content: "Card 6" },
+    { id: 7, content: "Card 7" },
+    { id: 8, content: "Card 8" },
+    { id: 9, content: "Card 9" },
+    { id: 10, content: "Card 10" }
   ];
 
   const nextSlide = () => {
