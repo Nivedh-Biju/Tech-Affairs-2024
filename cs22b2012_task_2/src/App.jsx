@@ -8,7 +8,7 @@ import Navbar from './components/Navbar';
 import ResultPage from './components/ResultPage';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const toggleTheme = () => {
     setIsDarkMode((prevMode) => !prevMode);

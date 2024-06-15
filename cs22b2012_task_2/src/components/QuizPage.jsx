@@ -31,6 +31,12 @@ const QuizPage = () => {
     }
   };
 
+  const handlePrev = () => {
+    if (qno > 0) {
+      setQno((prevqno) => prevqno - 1);
+    }
+  };
+
   const handleSelectionChange = (index, selection) => {
     const newSelections = [...selections];
     newSelections[index] = selection;
@@ -39,7 +45,7 @@ const QuizPage = () => {
 
   const endQuiz = () => {
     const correctAnswers = calculateCorrectAnswers();
-    console.log("Number of correct answers", correctAnswers)
+    console.log("Number of correct answers", correctAnswers);
     setCorrect(correctAnswers);
 
     localStorage.clear();
@@ -60,12 +66,23 @@ const QuizPage = () => {
   };
 
   if (questionArray.length === 0) {
-    return <div>Loading...</div>; 
+    return <div>Loading...</div>;
   }
 
   return (
     <main className='flex flex-col gap-10 items-center justify-center p-4'>
-      <div className='flex flex-col items-center gap-2 mt-10'>
+      <div className='flex flex-col items-center justify-center gap-4'>
+        <div className='flex justify-center items-center'>
+          <button
+            onClick={handlePrev}
+            disabled={qno === 0}
+            className='w-12 h-12 hover:bg-orange-400 flex items-center justify-center button-color p-3 rounded-full disabled:opacity-70'
+          >
+            <svg className="w-6 h-6 text-gray-800 dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m5 15 7-7 7 7" />
+            </svg>
+          </button>
+        </div>
         <div className='p-4 flex flex-col justify-center items-center'>
           <QuestionCard
             key={qno}
@@ -74,42 +91,39 @@ const QuizPage = () => {
             onSelectionChange={(selection) => handleSelectionChange(qno, selection)}
           />
         </div>
-        {/* <div className='w-[200px] sm:min-w-[350px] lg:min-w-[500px]'>
-          <img src={`https://picsum.photos/seed/img${qno}/500/400`} alt="Image" className='w-full h-auto rounded-lg' />
-        </div> */}
-      </div>
-      <div className='flex justify-center items-center mt-4'>
-        {qno === questionArray.length - 1 ? (
-          <Link
-            to={"/result"}
-            className='button-color hover:bg-orange-400 text-white p-2 rounded-full'
-          >
-            <button onClick={endQuiz}>End Quiz</button>
-          </Link>
-        ) : (
-          <button
-            onClick={handleNext}
-            className='w-12 h-12 flex items-center justify-center button-color p-3 rounded-full ml-4'
-          >
-            <svg
-              className="w-6 h-6 text-gray-800"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="none"
-              viewBox="0 0 24 24"
+        <div className='flex justify-center items-center ml-4'>
+          {qno === questionArray.length - 1 ? (
+            <Link
+              to={"/result"}
+              className='button-color hover:bg-orange-400 text-white p-2 rounded-full'
             >
-              <path
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="m19 9-7 7-7-7"
-              />
-            </svg>
-          </button>
-        )}
+              <button onClick={endQuiz}>End Quiz</button>
+            </Link>
+          ) : (
+            <button
+              onClick={handleNext}
+              className='w-12 h-12 hover:bg-orange-400 flex items-center justify-center button-color p-3 rounded-full'
+            >
+              <svg
+                className="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="m19 9-7 7-7-7"
+                />
+              </svg>
+            </button>
+          )}
+        </div>
       </div>
     </main>
   );

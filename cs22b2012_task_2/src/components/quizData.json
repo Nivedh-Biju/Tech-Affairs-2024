@@ -9,7 +9,7 @@
     {
       "id": 2,
       "question": "Which of the following authors wrote the book 'To Kill a Mockingbird'?",
-      "options": ["F. Scott Fitzgerald", "Harper Lee", "Jane Austen", "J.K. Rowling"],
+      "options": ["F. Scott Fitzgerald", "Harper Lee", "Eminem", "J.K. Rowling"],
       "answer": "Harper Lee"
     },
     {
@@ -21,7 +21,7 @@
     {
       "id": 4,
       "question": "Which musician is known as the 'King of Rock and Roll'?",
-      "options": ["Elvis Presley", "Chuck Berry", "Little Richard", "Jerry Lee Lewis"],
+      "options": ["Elvis Presley", "Chuck Berry", "Jesse Pinkman", "Jerry Lee Lewis"],
       "answer": "Elvis Presley"
     },
     {
@@ -44,9 +44,9 @@
     },
     {
       "id": 8,
-      "question": "Who is the main character in the novel 'The Catcher in the Rye'?",
-      "options": ["Holden Caulfield", "Huckleberry Finn", "Tom Sawyer", "Scout Finch"],
-      "answer": "Holden Caulfield"
+      "question": "Who is the main character in the novel 'The Hound of the Baskervilles'?",
+      "options": ["Sherlock Holmes", "Huckleberry Finn", "Harry Potter", "Walter White"],
+      "answer": "Sherlock Holmes"
     },
     {
       "id": 9,
