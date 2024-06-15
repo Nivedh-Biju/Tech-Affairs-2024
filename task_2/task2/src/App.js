@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
 import './App.css';
-import MainMenu from './pages/mainMenu';
 import Bars from './Components/topBar';
 import BgAnim from './Components/bgAnim';
+import QuizPage from './pages/quizPage';
 
 function App() {
   return (
@@ -11,9 +11,8 @@ function App() {
         <BgAnim/>
         <Bars/>
         <Routes>
-          <Route path="/" element={<MainMenu/>}/>
+          <Route path="/" element={<QuizPage/>}/>
           <Route path="/scoreboard"/>
-          <Route path="/quiz"/>
         </Routes>
       </div>
     </Router>
