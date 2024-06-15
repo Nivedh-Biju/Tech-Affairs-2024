@@ -60,7 +60,7 @@ const QuizPage = () => {
   };
 
   if (questionArray.length === 0) {
-    return <div>Loading...</div>; // Display a loading message while questions are being shuffled
+    return <div>Loading...</div>; 
   }
 
   return (

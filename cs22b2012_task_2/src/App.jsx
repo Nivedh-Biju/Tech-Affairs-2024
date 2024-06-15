@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { ThemeProvider, CssBaseline, useTheme, Box } from '@mui/material';
+import { lightTheme, darkTheme } from './theme';
 import LandingPage from './components/LandingPage';
 import QuizPage from './components/QuizPage';
 import Navbar from './components/Navbar';
@@ -8,39 +10,35 @@ import ResultPage from './components/ResultPage';
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  useEffect(() => {
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-    const updateTheme = (e) => {
-      setIsDarkMode(e.matches);
-    };
-
-    updateTheme(prefersDarkScheme);
-    prefersDarkScheme.addEventListener('change', updateTheme);
-
-    return () => prefersDarkScheme.removeEventListener('change', updateTheme);
-  }, []);
-
-  const appStyles = {
-    backgroundImage: `url(${isDarkMode ? process.env.PUBLIC_URL + "/black_ripple.jpg" : process.env.PUBLIC_URL + "/white_ripple.jpg"})`,
-    color: isDarkMode ? 'white' : 'black',
-    minHeight: '100vh',
-    backgroundAttachment: 'fixed',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover',
+  const toggleTheme = () => {
+    setIsDarkMode((prevMode) => !prevMode);
   };
 
+  const theme = isDarkMode ? darkTheme : lightTheme;
+
   return (
-    <Router>
-      <main style={appStyles}>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<LandingPage />} />
-          <Route path='/quiz' element={<QuizPage />} />
-          <Route path='/result' element={<ResultPage />} />
-        </Routes>
-      </main>
-    </Router>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Box
+        sx={{
+          backgroundImage: `url(${theme.palette.background.image})`,
+          color: theme.palette.text.primary,
+          minHeight: '100vh',
+          backgroundAttachment: 'fixed',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+        }}
+      >
+        <Router>
+          <Navbar isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+          <Routes>
+            <Route path='/' element={<LandingPage />} />
+            <Route path='/quiz' element={<QuizPage />} />
+            <Route path='/result' element={<ResultPage />} />
+          </Routes>
+        </Router>
+      </Box>
+    </ThemeProvider>
   );
 }
 
