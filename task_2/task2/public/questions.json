@@ -1,0 +1,53 @@
+[
+    {
+      "question": "Who is the Technical Affairs Secretary?",
+      "options": ["Vishnu Teja Chitrala", "V A Abinanthan", "Ayush Agrawal", "Anish V Thomas"],
+      "answer": "Anish V Thomas"
+    },
+    {
+      "question": "Who is the Technical Affairs Joint Secretary?",
+      "options": ["Ayush Agrawal", "B.Siddhartha Reddy", "V A Abinanthan", "Purru Monvitha"],
+      "answer": "V A Abinanthan"
+    },
+    {
+      "question": "Who is the Hostel Affairs Secretary?",
+      "options": ["Purru Monvitha", "B.Siddhartha Reddy", "Ayush Agrawal", "Vishnu Teja Chitrala"],
+      "answer": "Ayush Agrawal"
+    },
+    {
+      "question": "Who is the General Affairs Joint Secretary'?",
+      "options": ["Vishnu Teja Chitrala", "Dharun Thota", "Sidharth", "Raghavendran S"],
+      "answer": "Dharun Thota"
+    },
+    {
+      "question": "Who is the General Affairs Secretary'?",
+      "options": ["Vuppala Vishnu", "Raghavendran S", "B.Siddhartha Reddy", "Tejaswi V. Panchagnula"],
+      "answer": "Raghavendran S"
+    },
+    {
+      "question": "Who is the Alumni Affairs Joint Secretary?",
+      "options": ["Keerthi Rekha", "Jhansi Rajeswari Athota", "Vuppala Vishnu", "Varsha G"],
+      "answer": "Keerthi Rekha"
+    },
+    {
+      "question": "Who is the Alumni Affairs Secretary?",
+      "options": ["Varsha G", "Swetha Teddu", "KSL Sanjana", "Dharun Thota"],
+      "answer": "Sanjana KSL"
+    },
+    {
+      "question": "Who was the Alumni Affairs Secretary last year?",
+      "options": ["Tejaswi V. Panchagnula", "Y Sai Mohith", "KSL Sanjana", "B Srinidhi"],
+      "answer": "B Srinidhi"
+    },
+    {
+      "question": "What is the Dean?",
+      "options": ["Balasubramanian Sivaselvan", "Masilamani V", "Debolina Misra", "B. Chitti Babu"],
+      "answer": "Masilamani V"
+    },
+    {
+      "question": "Who is the Dean Academics?",
+      "options": ["A V S Siva Prasad", "Raghavan Santhanam", "Jayabal K", "Balasubramanian Sivaselvan"],
+      "answer": "Jayabal K"
+    }
+
+  ]
