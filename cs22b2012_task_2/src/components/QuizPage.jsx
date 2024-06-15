@@ -58,7 +58,6 @@ const QuizPage = () => {
             onSelectionChange={(selection) => handleSelectionChange(qno, selection)}
           />
         </div>
-        {/* Uncomment below to display an image */}
         {/* <div className='w-[200px] sm:min-w-[350px] lg:min-w-[500px]'>
           <img src={`https://picsum.photos/seed/img${qno}/500/400`} alt="Image" className='w-full h-auto rounded-lg' />
         </div> */}
