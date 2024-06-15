@@ -1,13 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import quizdata from './quizData.json';
 import QuestionCard from './QuestionCard';
 import { Link } from 'react-router-dom';
 
+const shuffleArray = (array) => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+  }
+  return array;
+};
+
 const QuizPage = () => {
-  const questionArray = quizdata.questions;
+  const [questionArray, setQuestionArray] = useState([]);
   const [qno, setQno] = useState(0);
-  const [selections, setSelections] = useState(Array(questionArray.length).fill(''));
+  const [selections, setSelections] = useState([]);
   const [correct, setCorrect] = useState(0);
+
+  useEffect(() => {
+    const shuffledQuestions = shuffleArray([...quizdata.questions]);
+    setQuestionArray(shuffledQuestions);
+    setSelections(Array(shuffledQuestions.length).fill(''));
+  }, []);
 
   const handleNext = () => {
     if (qno < questionArray.length - 1) {
@@ -29,13 +43,11 @@ const QuizPage = () => {
     setCorrect(correctAnswers);
 
     localStorage.clear();
-  
     localStorage.setItem('quizCorrectAnswers', correctAnswers.toString());
-  
+
     console.log("End quiz button clicked. Selections:", selections);
     console.log(correctAnswers);
   };
-  
 
   const calculateCorrectAnswers = () => {
     let correctCount = 0;
@@ -46,6 +58,10 @@ const QuizPage = () => {
     });
     return correctCount;
   };
+
+  if (questionArray.length === 0) {
+    return <div>Loading...</div>; // Display a loading message while questions are being shuffled
+  }
 
   return (
     <main className='flex flex-col gap-10 items-center justify-center p-4'>
