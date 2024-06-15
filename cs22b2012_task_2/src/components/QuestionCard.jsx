@@ -8,7 +8,7 @@ const QuestionCard = ({ data, selection, onSelectionChange }) => {
   return (
     <div className='flex flex-col p-4 md:px-6 md:py-16 shadow-2xl rounded-lg w-full max-w-[1000px] h-auto'>
       <h2 className='text-2xl sm:text-3xl lg:text-4xl text-center mb-4'>{data.question}</h2>
-      <div className='flex justify-center items-center]'>
+      <div className='flex justify-center items-center mt-6'>
         <ul className='grid grid-cols-1 sm:grid-cols-2 gap-4 list-none justify-center items-center'>
           {data.options.map((option, index) => (
             <li
