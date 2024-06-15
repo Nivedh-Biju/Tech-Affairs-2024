@@ -1,6 +1,7 @@
 import { useEffect,React } from "react";
 import './bgAnim.css'
 
+
 function BgAnim(){
     useEffect(circleAnimation);
     return(

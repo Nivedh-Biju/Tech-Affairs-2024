@@ -1,11 +1,12 @@
 import React from "react";
+import StartButton from "../Components/startButton";
+import './mainMenu.css';
 
 function MainMenu(){
     return(
-    <>
-    <div>
+    <div className="main-menu-container">
+        <StartButton/>
     </div>
-    </>
     )
 }
 
