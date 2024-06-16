@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+  }
+
+@keyframes ripple {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  @keyframes rippler{
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+.ripple1{
+  animation: ripple 1s ease forwards infinite ;
+}
+
+.ripple2{
+  animation: ripple 2s ease forwards infinite ;
+}
+
+.ripple3{
+  animation: rippler 5s ease forwards infinite;
+}
+
+.ripple4{
+  animation: rippler 5s ease forwards infinite;
+  animation-delay: 1.33s;
+}
+
+.ripple5{
+  animation: rippler 5s ease forwards infinite;
+  animation-delay: 2.66s;
+}
