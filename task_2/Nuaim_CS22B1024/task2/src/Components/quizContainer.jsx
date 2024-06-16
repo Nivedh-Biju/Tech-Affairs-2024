@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import './quizContainer.css';
 import questions from '../questions.json';
+import { capitalizeFirstLetter } from "../utils/stringFormats.js";
+import { turnOnButton,turnOffButton } from "./startButton.jsx";
 
 const introTextHTML=`
     <div class="intro-text-container">
@@ -14,36 +16,77 @@ const introTextHTML=`
 `
 
 let QIndex=0;
-export let isQuizTime=false;
+let isQuizTime=false;
 let chosenQs;
 
 export function startQuiz(){
     const quizContainer=document.querySelector('.quiz-main-container');
+    quizContainer.style.opacity='0';
     if(!isQuizTime){
         chosenQs=chooseQuestions();
         isQuizTime=true;
     }
-    let questionHTML=`
-        <div class="quiz-board">
-            <div class="question-num">Question ${QIndex+1}</div>
-            <div class="question">
-                ${chosenQs[QIndex].question}
-            </div>
-            <div class="options">
-                <div id="A">${chosenQs[QIndex].A}</div>
-                <div id="B">${chosenQs[QIndex].B}</div>
-                <div id="C">${chosenQs[QIndex].C}</div>
-                <div id="D">${chosenQs[QIndex].D}</div>
-            </div>
-        </div>
-    `;
-    quizContainer.innerHTML=questionHTML;
-    QIndex++;
-    if(QIndex===15){
+    if(QIndex>=15){
         QIndex=0;
         isQuizTime=false;
-        quizContainer.innerHTML=introTextHTML;
+        turnOffButton();
+        setTimeout(()=>{
+            quizContainer.innerHTML=introTextHTML;
+            quizContainer.style.opacity='100%';
+            turnOnButton();
+        },500);
     }
+    if(isQuizTime){
+        setTimeout(()=>{
+            let questionHTML=`
+                <div class="quiz-board">
+                    <div class="question-num">Question ${QIndex+1}</div>
+                    <div class="question">
+                        ${chosenQs[QIndex].question}
+                    </div>
+                    <div class="options" data-answer=${chosenQs[QIndex].answer}>
+                        <div class="option" id="A">${capitalizeFirstLetter(chosenQs[QIndex].A)}</div>
+                        <div class="option" id="B">${capitalizeFirstLetter(chosenQs[QIndex].B)}</div>
+                        <div class="option" id="C">${capitalizeFirstLetter(chosenQs[QIndex].C)}</div>
+                        <div class="option" id="D">${capitalizeFirstLetter(chosenQs[QIndex].D)}</div>
+                    </div>
+                </div>
+            `
+            quizContainer.innerHTML=questionHTML;
+            quizContainer.style.opacity='100%';
+            const optionsElement=document.querySelector('.options');
+            for(let i=0;i<optionsElement.childElementCount;i++){
+                optionsElement.children.item(i).addEventListener('click',handleOptionClick);
+            }
+            QIndex++;
+        },500);
+        turnOffButton();
+        const buttonElement=document.querySelector('.start-button');
+        buttonElement.style.opacity='50%';
+    }
+}
+
+function handleOptionClick(event){
+    const optionsElement=document.querySelector('.options');
+    const chosenOption=event.target;
+    if(chosenOption.id===optionsElement.dataset.answer){
+        chosenOption.style.backgroundColor='green';
+    }
+    else{
+        chosenOption.style.backgroundColor='red';
+    }
+    /*getting rid of all the children's event listeners*/
+    for(let i=0;i<optionsElement.childElementCount;i++){
+        const option=optionsElement.children.item(i)
+        if(option!==chosenOption){
+            option.style.backgroundColor='transparent';
+            option.style.opacity='40%';
+        }
+        option.removeEventListener('click',handleOptionClick);
+        option.style.color='white';
+        option.style.cursor='default';
+    }
+    turnOnButton();
 }
 
 function chooseQuestions(){

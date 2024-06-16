@@ -1,6 +1,6 @@
-import React from "react";
+import { React,useEffect } from "react";
 import './startButton.css';
-import { isQuizTime, startQuiz } from "./quizContainer";
+import { startQuiz } from "./quizContainer";
 
 function handleStartButton(){
     const backgroundElement=document.querySelector('.background-container');
@@ -10,25 +10,27 @@ function handleStartButton(){
         backgroundElement.appendChild(node);
     }
     nextCircleAnimation();
+    startQuiz();
+}
+
+export function turnOffButton(){
     const buttonElement=document.querySelector('.start-button');
     const borderElement=document.querySelector('.button-border');
     const pulsingElement=document.querySelector('.animated-outer-border');
+    buttonElement.removeEventListener('click',handleStartButton);
     buttonElement.style.opacity='0';
     borderElement.style.opacity='0';
     pulsingElement.style.display='none';
-    startQuiz();
-    if(isQuizTime){
-        setTimeout(()=>{
-            buttonElement.style.opacity='50%';
-        },1000)
-    }
-    else{
-        setTimeout(()=>{
-            buttonElement.style.opacity='100%';
-            borderElement.style.opacity='100%';
-            pulsingElement.style.display='block'
-        },1000)
-    }
+}
+
+export function turnOnButton(){
+    const buttonElement=document.querySelector('.start-button');
+    const borderElement=document.querySelector('.button-border');
+    const pulsingElement=document.querySelector('.animated-outer-border');
+    buttonElement.style.opacity='100%';
+    borderElement.style.opacity='100%';
+    pulsingElement.style.display='block';
+    buttonElement.addEventListener('click',handleStartButton);
 }
 
 function nextCircleAnimation(){
@@ -48,13 +50,16 @@ function nextCircleAnimation(){
 }
 
 function StartButton(){
+    useEffect(()=>{
+        document.querySelector('.start-button').addEventListener('click',handleStartButton);
+    })
     return (
         <div className="button-container">
             <div className="animated-outer-border">
             </div>
             <div className="button-border">
             </div>
-            <button onClick={handleStartButton} className="start-button">
+            <button className="start-button">
             </button>
         </div>
     );
