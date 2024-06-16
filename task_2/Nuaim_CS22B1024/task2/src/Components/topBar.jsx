@@ -7,14 +7,18 @@ function handleHamburgerClick(){
     const hamburgerElement=document.querySelector('.topbar-container .hamburger-icon');
     const sidebarElement=document.querySelector('.sidebar-container')
     if(!toggle){
-        sidebarElement.style.transform="translateX(0)";
-        hamburgerElement.innerText='X'
+        sidebarElement.style.transform="scale(1)";
+        hamburgerElement.innerText='X';
     }
     else{
-        sidebarElement.style.transform="translateX(-100vw)";
+        sidebarElement.style.transform="scale(0)";
         hamburgerElement.innerText='☰';
     }
     toggle=!toggle;
+}
+
+function handleRestartClick(){
+    window.location.reload();
 }
 
 function Bars(){
@@ -32,9 +36,9 @@ function Bars(){
             </div>
         </div>
         <div className="sidebar-container">
-            <div>Home</div>
-            <div>Quiz</div>
-            <div>Score</div>
+            <div onClick={handleRestartClick}>
+                Restart
+            </div>
         </div>
     </>)
 }

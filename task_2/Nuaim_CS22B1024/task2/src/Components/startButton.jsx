@@ -1,57 +1,58 @@
 import { React,useEffect } from "react";
 import './startButton.css';
-import { startQuiz } from "./quizContainer";
+import { startQuiz,intervalId,restartQuiz } from "./quizContainer";
+import { circleAnimation, nextCircleAnimation } from "./bgAnim";
 
-function handleStartButton(){
-    const backgroundElement=document.querySelector('.background-container');
-    if(backgroundElement.children.length<4){
-        let node=document.createElement("div");
-        node.classList.add('circle');
-        backgroundElement.appendChild(node);
-    }
+function handleStartButtonClick(event){
     nextCircleAnimation();
     startQuiz();
+    const buttonElement=event.target;
+    buttonElement.style.opacity='50%';
 }
 
 export function turnOffButton(){
     const buttonElement=document.querySelector('.start-button');
     const borderElement=document.querySelector('.button-border');
     const pulsingElement=document.querySelector('.animated-outer-border');
-    buttonElement.removeEventListener('click',handleStartButton);
+    buttonElement.removeEventListener('click',handleStartButtonClick);
     buttonElement.style.opacity='0';
+    buttonElement.style.cursor='default';
     borderElement.style.opacity='0';
     pulsingElement.style.display='none';
 }
 
-export function turnOnButton(){
+export function turnOnButton(buttonState='start'){
     const buttonElement=document.querySelector('.start-button');
     const borderElement=document.querySelector('.button-border');
     const pulsingElement=document.querySelector('.animated-outer-border');
     buttonElement.style.opacity='100%';
+    buttonElement.style.cursor='pointer';
     borderElement.style.opacity='100%';
     pulsingElement.style.display='block';
-    buttonElement.addEventListener('click',handleStartButton);
+    if(buttonState==='start'){
+        buttonElement.addEventListener('click',handleStartButtonClick);
+    }
+    else if(buttonState==='restart'){
+        buttonElement.addEventListener('click',handleRestartButtonClick);
+        buttonElement.classList.add('restart-button');
+    }
 }
 
-function nextCircleAnimation(){
-    let circleSizes=[900,700,500,300];
-    const circlesList=document.querySelectorAll('.circle');
-    circlesList.forEach((circle,index) => {
-        setTimeout(() => {
-            circle.style.transform=`scale(${circleSizes[index]-10})`;
-        }, index*100);
-    });
-    circlesList[0].style.transition='all 2s, opacity 1s, box-shadow 1s';
-    circlesList[0].style.opacity='0';
-    circlesList[0].style.boxShadow='';
-    setTimeout(()=>{
-        circlesList[0].remove();
-    },1000)
+function handleRestartButtonClick(event){
+    const buttonElement=event.target;
+    circleAnimation();
+    if(intervalId){
+        clearInterval(intervalId);
+    }
+    buttonElement.classList.remove('restart-button');
+    buttonElement.removeEventListener('click',handleRestartButtonClick);
+    buttonElement.addEventListener('click',handleStartButtonClick);
+    restartQuiz();
 }
 
 function StartButton(){
     useEffect(()=>{
-        document.querySelector('.start-button').addEventListener('click',handleStartButton);
+        document.querySelector('.start-button').addEventListener('click',handleStartButtonClick);
     })
     return (
         <div className="button-container">

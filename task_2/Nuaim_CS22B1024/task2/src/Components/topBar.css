@@ -13,6 +13,7 @@
 }
 
 .topbar-container .hamburger-icon{
+    z-index: 10;
     width: 30px;
     font-size: 1.5rem;
 }
@@ -21,23 +22,39 @@
     cursor: pointer;
 }
 
+.share-button:hover{
+    opacity: 0;
+    cursor: default;
+}
+
 .sidebar-container{
     position: fixed;
     top: 0;
-    padding-top: 5vh;
-    height: 100vh;
     color: white;
     width: 15%;
     display: flex;
     flex-flow: column nowrap;
     align-items: start;
     gap: 20px;
-    padding-top: 100px;
-    padding-left: 20px;
-    transform: translateX(-100vw);
+    margin-top: 10px;
+    padding-left: 50px;
+    transform: scale(0);
+    transform-origin: 40px 50%;
     transition: 0.5s ease-in-out;
-    box-shadow: 10px 10px 10px #1d2429;
-    z-index: -1;
+}
+
+.sidebar-container div{
+    background-color: orange;
+    padding: 8px 20px;
+    border: solid white;
+    border-radius: 100px;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.sidebar-container div:hover{
+    background-color: rgb(255, 197, 88);
 }
 
 .main-logo{

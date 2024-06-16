@@ -53,6 +53,10 @@
     cursor: pointer;
 }
 
+.restart-button{
+    background-image: url("https://www.svgrepo.com/show/343263/reset.svg");
+}
+
 .animated-outer-border{
     position: absolute;
     background: linear-gradient(to top right,#202b31,#2b363d);

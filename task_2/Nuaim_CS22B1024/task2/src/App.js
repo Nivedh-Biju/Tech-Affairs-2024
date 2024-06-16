@@ -12,7 +12,6 @@ function App() {
         <Bars/>
         <Routes>
           <Route path="/" element={<QuizPage/>}/>
-          <Route path="/scoreboard"/>
         </Routes>
       </div>
     </Router>
