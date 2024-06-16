@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../../components/Card';
 
-function SamplePage({ data }) {
+function LandingPage({ data }) {
     const no_of_images = 3;
     const [displayed_images, setDisplayedImages] = useState([]);
     const [startIndex, setStartIndex] = useState(0);
@@ -73,4 +73,4 @@ function SamplePage({ data }) {
     );
 }
 
-export default SamplePage;
+export default LandingPage;

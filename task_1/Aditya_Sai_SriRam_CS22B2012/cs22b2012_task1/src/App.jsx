@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; 
-import SamplePage from './pages/samplepage/samplepage';
+import LandingPage from './pages/Aditya_Sai_SriRam_CS22B2012_landingpage/landingpage';
 import carouseldata from "./carouselData.json"
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <Router> 
       <div className="dark:bg-slate-800 dark:text-white m-0 min-h-screen">
         <Routes> 
-          <Route path="/" element={<SamplePage data = {slides}/>} /> 
+          <Route path="/" element={<LandingPage data = {slides}/>} /> 
         </Routes>
       </div> 
     </Router>
