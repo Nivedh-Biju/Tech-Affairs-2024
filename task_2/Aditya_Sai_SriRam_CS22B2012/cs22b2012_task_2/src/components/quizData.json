@@ -1,0 +1,94 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which planet in our solar system is known as the Red Planet?",
+      "options": ["Earth", "Mars", "Jupiter", "Saturn"],
+      "answer": "Mars"
+    },
+    {
+      "id": 2,
+      "question": "Which of the following authors wrote the book 'To Kill a Mockingbird'?",
+      "options": ["F. Scott Fitzgerald", "Harper Lee", "Eminem", "J.K. Rowling"],
+      "answer": "Harper Lee"
+    },
+    {
+      "id": 3,
+      "question": "What is the largest living species of lizard?",
+      "options": ["Komodo dragon", "Saltwater crocodile", "Black mamba", "African elephant"],
+      "answer": "Komodo dragon"
+    },
+    {
+      "id": 4,
+      "question": "Which musician is known as the 'King of Rock and Roll'?",
+      "options": ["Elvis Presley", "Chuck Berry", "Jesse Pinkman", "Jerry Lee Lewis"],
+      "answer": "Elvis Presley"
+    },
+    {
+      "id": 5,
+      "question": "What is the chemical symbol for gold?",
+      "options": ["Ag", "Au", "Hg", "Pb"],
+      "answer": "Au"
+    },
+    {
+      "id": 6,
+      "question": "Which of the following countries is NOT a member of the G7?",
+      "options": ["Canada", "France", "Germany", "China"],
+      "answer": "China"
+    },
+    {
+      "id": 7,
+      "question": "What is the smallest country in the world, both in terms of population and land area?",
+      "options": ["Vatican City", "Monaco", "Nauru", "Tuvalu"],
+      "answer": "Vatican City"
+    },
+    {
+      "id": 8,
+      "question": "Who is the main character in the novel 'The Hound of the Baskervilles'?",
+      "options": ["Sherlock Holmes", "Huckleberry Finn", "Harry Potter", "Walter White"],
+      "answer": "Sherlock Holmes"
+    },
+    {
+      "id": 9,
+      "question": "What is the largest mammal on Earth?",
+      "options": ["Blue whale", "Fin whale", "Humpback whale", "Sperm whale"],
+      "answer": "Blue whale"
+    },
+    {
+      "id": 10,
+      "question": "Which chemical element has the symbol 'O'?",
+      "options": ["Oxygen", "Osmium", "Oganesson", "Oxidane"],
+      "answer": "Oxygen"
+    },
+    {
+      "id": 11,
+      "question": "Who painted the Mona Lisa?",
+      "options": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+      "answer": "Leonardo da Vinci"
+    },
+    {
+      "id": 12,
+      "question": "What is the capital city of Japan?",
+      "options": ["Tokyo", "Kyoto", "Osaka", "Hiroshima"],
+      "answer": "Tokyo"
+    },
+    {
+      "id": 13,
+      "question": "Which planet is known as the Morning Star or the Evening Star?",
+      "options": ["Mercury", "Venus", "Mars", "Jupiter"],
+      "answer": "Venus"
+    },
+    {
+      "id": 14,
+      "question": "What is the largest desert in the world?",
+      "options": ["Sahara Desert", "Arabian Desert", "Gobi Desert", "Antarctic Desert"],
+      "answer": "Antarctic Desert"
+    },
+    {
+      "id": 15,
+      "question": "Who wrote the play 'Romeo and Juliet'?",
+      "options": ["William Shakespeare", "Charles Dickens", "Jane Austen", "Mark Twain"],
+      "answer": "William Shakespeare"
+    }
+  ]
+}
