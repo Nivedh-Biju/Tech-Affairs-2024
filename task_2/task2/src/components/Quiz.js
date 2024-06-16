@@ -103,9 +103,8 @@ const Quiz = () => {
           onClick={handleNext}
           disabled={userAnswers[currentQuestionIndex] === undefined}
         >
-          {/* For Arrow */}
           <svg viewBox="0 0 24 24">
-            <path fill="white" d="M12 40l-10-50h20z" />
+            <path fill="white" d="M12 20l-8-14h16zz" />
           </svg>
         </button>
       </div>

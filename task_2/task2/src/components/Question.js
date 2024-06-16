@@ -1,23 +1,21 @@
 import React from "react";
-import "./Question.css";
+import "./Quiz.css";
 
 const Question = ({ data, onAnswer, currentScore, selectedAnswer }) => {
-  if (!data) {
-    return null;
-  }
-
-  const { question, options } = data;
-
   return (
-    <div className="question-container">
+    <div>
       <div className="score">Score: {currentScore}</div>
-      <div className="question">{question}</div>
-      <div className="options">
-        {options.map((option, index) => (
+      <div className="question">{data.question}</div>
+      <div className="options-grid">
+        {data.options.map((option, index) => (
           <button
             key={index}
+            className="option-button"
             onClick={() => onAnswer(option)}
-            className={selectedAnswer === option ? "selected" : ""}
+            style={{
+              backgroundColor:
+                selectedAnswer === option ? "lightblue" : "white",
+            }}
           >
             {option}
           </button>
