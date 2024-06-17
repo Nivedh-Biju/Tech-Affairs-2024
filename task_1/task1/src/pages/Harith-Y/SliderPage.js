@@ -14,7 +14,7 @@ const SliderPage = () => {
     { id: 7, content: "Card 7" },
     { id: 8, content: "Card 8" },
     { id: 9, content: "Card 9" },
-    { id: 10, content: "Card 10" }
+    { id: 10, content: "Card 10" },
   ];
 
   const nextSlide = () => {
@@ -49,7 +49,7 @@ const SliderPage = () => {
       <div className="slider-wrapper">
         <div className="slider" style={{ transform: getTransformValue() }}>
           {cards.map((card) => (
-            <div key={card.id} className="card">
+            <div key={card.id} className="card fade-in">
               {card.content}
             </div>
           ))}
